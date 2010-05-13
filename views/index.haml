@@ -1,8 +1,8 @@
 - @databases.each do |db|
-  %a{:href => File.
+  %a{:href => "/" + db.name}
     %h2
       = db.name
   %ul
     - db.collections.each do |collection|
-      %a{:href => "/" + File.join db.name, collection}
+      %a{:href => "/" + File.join(db.name, collection)}
         %li #{collection}
