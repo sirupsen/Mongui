@@ -9,22 +9,20 @@ class Database
   end
 
   def self.find(query)
-    db = Mongo::Connection.new
-    
-
     if query = :all
-      @@databases = []
-      db.database_names.each {|name| @@databases << Database.new(name)}
-      find_collections_for_databases
-      @@databases
-    end
-  end
+      mongo = Mongo::Connection.new
 
-  private
-    def self.find_collections_for_databases
-      @@databases.each do |db|
-        tmp_db = Mongo::Connection.new.db(db.name)
-        db.db = tmp_db
+      @@databases = []
+      mongo.database_names.each do |name|
+        db = Database.new(name)
+        db.db = Mongo::Connection.new.db(name)
+        @@databases << db
       end
+      return @@databases
     end
+
+    db = Database.new(query)
+    db.db = Mongo::Connection.new.db(query)
+    db
+  end
 end
