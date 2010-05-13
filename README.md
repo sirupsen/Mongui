@@ -23,6 +23,6 @@ Install the Mongo Ruby driver, as well as Sinatra:
     git clone git://github.com/Sirupsen/Mongui.git
     cd Mongui
     ruby mongui.rb
-    Sinatra has taken the stage on [4567](http://localhost:4567)..
+    Sinatra has taken the stage on http://localhost:4567..
 
 Now simply direct your browser to [localhost:4567](http://localhost:4567) and a list of your databases, and their collections should show up!
