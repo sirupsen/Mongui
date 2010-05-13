@@ -91,7 +91,7 @@ pre {
 
 #container {
   margin: 0px auto;
-  width: 550px;
+  width: 800px;
 }
 
 /*
@@ -219,4 +219,13 @@ ul li ul li ul li {
 
 .hidden {
   display: none;
+}
+
+td {
+  padding: 5px;
+}
+
+th {
+  padding: 7px;
+  font-weight: bold;
 }
