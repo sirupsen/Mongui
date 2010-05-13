@@ -31,3 +31,10 @@ Install the Mongo Ruby driver, as well as Sinatra:
     Sinatra has taken the stage on http://localhost:4567..
 
 Now simply direct your browser to [localhost:4567](http://localhost:4567) and a list of your databases, and their collections should show up!
+
+# Screenshots
+
+Everybody loves them.
+
+![Collections](http://i.imgur.com/DNAuJ.png)
+![Databases](http://i.imgur.com/6KYRt.png)
