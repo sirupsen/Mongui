@@ -41,3 +41,11 @@ get "/remove/documents/:database/:collection" do
 
   redirect "/database/#{params[:database]}/#{params[:collection]}"
 end
+
+get "/remove/document/:database/:collection/:id" do
+  @db = Database.find(params[:database])
+  @collection = @db.db[params[:collection]]
+  @collection.remove({:_id => BSON::ObjectID.from_string(params[:id])})
+
+  redirect "/database/#{params[:database]}/#{params[:collection]}"
+end

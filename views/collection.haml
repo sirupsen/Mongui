@@ -14,9 +14,13 @@
       - @collection.find_one.each_key do |key|
         %th
           = key
+      %th
+        delete
 
   - @collection.find.each do |row|
     %tr
       - row.each do |index, val|
         %td
           = val
+      %td
+        %a{:href => "/remove/document/" + File.join(@db.name, @collection.name, row["_id"].to_s)} X
