@@ -1,4 +1,6 @@
-%h2 #{@db.name} (#{@collection.count})
+%h2 #{@db.name}/#{@collection.name} (#{@collection.count})
+
+%a{:href => "/drop/" + File.join(@db.name, @collection.name)} Drop #{@collection.name}
 
 %table
   %tr
