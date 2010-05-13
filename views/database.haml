@@ -1,0 +1,11 @@
+%h2
+  = @db.name
+
+%p
+  %a{:href => "/drop/database/" + @db.name} Drop #{@db.name}
+
+%ul
+  - @db.db.collections.each do |collection|
+    %li
+      %a{:href => "/database/" + File.join(collection.db.name, collection.name)}
+        = collection.name

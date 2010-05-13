@@ -13,6 +13,16 @@ get "/database/:database/:collection" do
   haml :collection, {:layout => true}
 end
 
+get "/database/:database" do
+  @db = Database.find(params[:database])
+
+  haml :database, {:layout => true}
+end
+
+get "/drop/database/:database" do
+  "Due to a bug in the Mongo driver, this is not possible currently"
+end
+
 get "/add/document/:database/:collection" do
   @db = Database.find(params[:database])
   @collection = @db.db[params[:collection]]

@@ -1,4 +1,9 @@
-%h2 #{@db.name}/#{@collection.name} (#{@collection.count})
+%h2 
+  %a{:href => "/database/" + @db.name} 
+    #{@db.name}
+  = @collection.name
+  = @collection.count
+
 
 #ul
   %li
