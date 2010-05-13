@@ -1,0 +1,13 @@
+%h2 #{@db.name}
+
+%table
+  %tr
+    - @collection.find_one.each_key do |key|
+      %th
+        = key
+
+  - @collection.find.each do |row|
+    %tr
+      - row.each do |index, val|
+        %td
+          = val
