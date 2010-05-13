@@ -12,3 +12,18 @@ get "/database/:database/:collection" do
   @collection = @db.db[params[:collection]]
   haml :collection, {:layout => true}
 end
+
+get "/drop/collection/:database/:collection" do
+  @db = Database.find(params[:database])
+  @db.db[params[:collection]].drop
+
+  redirect "/"
+end
+
+get "/remove/documents/:database/:collection" do
+  @db = Database.find(params[:database])
+  @db.db[params[:collection]].remove
+
+  redirect "/database/#{params[:database]}/#{params[:collection]}"
+  "hi"
+end

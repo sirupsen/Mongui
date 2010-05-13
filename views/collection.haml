@@ -1,12 +1,17 @@
 %h2 #{@db.name}/#{@collection.name} (#{@collection.count})
 
-%a{:href => "/drop/" + File.join(@db.name, @collection.name)} Drop #{@collection.name}
+#ul
+  %li
+    %a{:href => "/drop/collection/" + File.join(@db.name, @collection.name)} Drop #{@collection.name}
+  %li
+    %a{:href => "/remove/documents/" + File.join(@db.name, @collection.name)} Remove all documents
 
 %table
   %tr
-    - @collection.find_one.each_key do |key|
-      %th
-        = key
+    - if @collection.find_one
+      - @collection.find_one.each_key do |key|
+        %th
+          = key
 
   - @collection.find.each do |row|
     %tr
