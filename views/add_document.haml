@@ -1,0 +1,12 @@
+%a{:href => "/database/" + File.join(@db.name, @collection.name)}
+  Back to #{@collection.name}
+  
+%form{:method => "post", :action => "/add/document/" + File.join(@db.name, @collection.name)}
+  - if @collection.find_one
+    - @collection.find_one.each_key do |key|
+      - unless key == "_id"
+        %label{:for => "document[#{key}]"} #{key}
+        %input{:type => "text", :name => "document[#{key}]"}
+    %input{:type => "submit", :value => "Submit"}
+  - else
+    %p Sorry, currently you can't add to an empty collection!
