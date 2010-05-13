@@ -8,5 +8,7 @@ get "/" do
 end
 
 get "/database/:database/:collection" do
+  @db = Database.find(params[:database])
+  @collection = @db.db[params[:collection]]
   haml :collection, {:layout => true}
 end

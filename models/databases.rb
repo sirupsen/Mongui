@@ -9,7 +9,7 @@ class Database
   end
 
   def self.find(query)
-    if query = :all
+    if query == :all
       mongo = Mongo::Connection.new
 
       @@databases = []
