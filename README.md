@@ -9,6 +9,11 @@ Currently Mongui has the following features:
 * Show all databases, and their collections
 * Present collections with all their rows
 
+### Known bugs
+
+* Error whenever you want to access GridFS
+* Embedded document presentation doesn't work too well
+
 # Installation
 
 Simple guide on how to get Mongui running on your system.
