@@ -13,6 +13,21 @@ get "/database/:database/:collection" do
   haml :collection, {:layout => true}
 end
 
+get "/add/document/:database/:collection" do
+  @db = Database.find(params[:database])
+  @collection = @db.db[params[:collection]]
+
+  haml :add_document, {:layout => true}
+end
+
+post "/add/document/:database/:collection" do
+  @db = Database.find(params[:database])
+  @collection = @db.db[params[:collection]]
+  @collection.insert(params[:document])
+  
+  redirect "/database/#{params[:database]}/#{params[:collection]}"
+end
+
 get "/drop/collection/:database/:collection" do
   @db = Database.find(params[:database])
   @db.db[params[:collection]].drop
@@ -25,5 +40,4 @@ get "/remove/documents/:database/:collection" do
   @db.db[params[:collection]].remove
 
   redirect "/database/#{params[:database]}/#{params[:collection]}"
-  "hi"
 end

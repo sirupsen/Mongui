@@ -5,6 +5,8 @@
     %a{:href => "/drop/collection/" + File.join(@db.name, @collection.name)} Drop #{@collection.name}
   %li
     %a{:href => "/remove/documents/" + File.join(@db.name, @collection.name)} Remove all documents
+  %li
+    %a{:href => "/add/document/" + File.join(@db.name, @collection.name)} Add document
 
 %table
   %tr
