@@ -1,0 +1,16 @@
+!!! Strict
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8"}
+
+    %title Mongo
+    %link{:rel => "stylesheet", :href => "/style.css"}
+
+  %body
+    #container
+      %a{:href => "/"}
+        %h1 Mongui
+
+      .notice.hidden
+
+      = yield
