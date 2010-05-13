@@ -1,2 +1,6 @@
 - @databases.each do |db|
-  = db.name
+  %h2
+    = db.name
+  %ul
+    - db.collections.each do |collection|
+      %li #{collection}
