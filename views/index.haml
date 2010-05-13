@@ -3,6 +3,6 @@
     %h2
       = db.name
   %ul
-    - db.collections.each do |collection|
-      %a{:href => "/" + File.join(db.name, collection)}
-        %li #{collection}
+    - db.db.collections.each do |collection|
+      %a{:href => "/" + File.join(collection.db.name, collection.name)}
+        %li #{collection.name}
