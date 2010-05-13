@@ -1,9 +1,8 @@
 require 'sinatra'
 require 'mongo'
+require 'models/databases'
 
 get "/" do
-  db = Mongo::Connection.new
-
-  @databases = db.database_names
+  @databases = Database.find(:all)
   haml :index, {:layout => true}
 end
