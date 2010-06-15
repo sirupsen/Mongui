@@ -21,7 +21,7 @@ Simple guide on how to get Mongui running on your system.
 ## Install dependencies
 
 Install the Mongo Ruby driver, as well as Sinatra:
-    gem install mongo bson sinatra
+    gem install mongo bson haml sinatra
 
 ## Fire up Mongui
 
