@@ -28,7 +28,7 @@
           });
 
           r.children('td').children('.key').change(function() {
-            r.children('td').children('.value').attr('name', $(this).attr('value'));
+            r.children('td').children('.value').attr('name', 'document[' + $(this).attr('value') + ']');
           });
       });
       $('tr td a').click(function() {
