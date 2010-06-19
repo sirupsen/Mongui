@@ -3,10 +3,10 @@
     #{@db.name}
   = @collection.name
   = "(" + @collection.count.to_s
-  - unless @collection.count == 0
-    ="documents)"
-  - else
+  - if @collection.count == 1
     ="document)"
+  - else
+    ="documents)"
 
 
 %ul
