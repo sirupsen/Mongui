@@ -33,6 +33,8 @@
           = row[key]
       - if row["_id"]
         %td.meta
-          %a{:href => "/remove/document/" + File.join(@db.name, @collection.name, row["_id"].to_s)} X
+          %a{:href => "/remove/document/" + File.join(@db.name, @collection.name, row["_id"].to_s)}
+            %img{:src => "/delete.png"}
         %td.meta
-          %a{:href => "/edit/document/" + File.join(@db.name, @collection.name, row["_id"].to_s)} &rarr;
+          %a{:href => "/edit/document/" + File.join(@db.name, @collection.name, row["_id"].to_s)}
+            %img{:src => "/pencil.png"}

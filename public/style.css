@@ -251,7 +251,7 @@ h2:hover a.delete {
     display:inline;
 }
 
-h2 a img {
+a img {
     outline:none;
     border:none;
 }
