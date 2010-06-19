@@ -10,8 +10,8 @@
       %a{:href => "/database/" + File.join(collection.db.name, collection.name)}
         = collection.name
 
-%form
-  %fieldset
+%form{:method => "post", :action => "/add/collection/" + @db.name}
+  %fieldset{:style => "border:1px solid;"}
     %legend
       New collection:
     %input{:name => "collname"}

@@ -9,4 +9,29 @@
         %input{:type => "text", :name => "document[#{key}]"}
     %input{:type => "submit", :value => "Submit"}
   - else
-    %h3 Creating first document
+    %table#rows
+      %tr
+        %th Field Name
+        %th Value
+    %a{:href=>"#", :id=>"newfield"} + Field
+    %input{:type=>'submit', :value=>'Add'}
+
+    :javascript
+      var i = 1;
+      $('#newfield').click(function() {
+        var r = $('<tr><td><input class="key" /></td><td><input class="value" name="v_' + i + '" /></td><td><a href="#">Remove</a></td></tr>')
+          .insertAfter('#rows tr:last-child');
+
+          r.children('td').children('a')
+          .click(function() {
+            $(this).parents('tr').remove();
+          });
+
+          r.children('td').children('.key').change(function() {
+            r.children('td').children('.value').attr('name', $(this).attr('value'));
+          });
+      });
+      $('tr td a').click(function() {
+        $(this).parents('tr').remove();
+      });
+      $('#newfield').click();

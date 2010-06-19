@@ -24,6 +24,10 @@ get "/drop/database/:database" do
   "Due to a bug in the Mongo driver, this is not possible currently"
 end
 
+post "/add/collection/:database" do
+  redirect "/add/document/#{params[:database]}/#{params[:collname]}"
+end
+
 get "/add/document/:database/:collection" do
   @db = Database.find(params[:database])
   @collection = @db.db[params[:collection]]
