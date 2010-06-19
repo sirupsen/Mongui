@@ -15,8 +15,9 @@
 
 %table
   %tr
-    - if @collection.find_one
-      - @collection.find_one.each_key do |key|
+    - @refrow = @collection.find_one
+    - if @refrow
+      - @refrow.each_key do |key|
         %th
           = key
       %th
@@ -24,8 +25,8 @@
 
   - @collection.find.each do |row|
     %tr
-      - row.each do |index, val|
+      - @refrow.each_key do |key|
         %td
-          = val
+          = row[key]
       %td
         %a{:href => "/remove/document/" + File.join(@db.name, @collection.name, row["_id"].to_s)} X
