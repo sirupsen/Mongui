@@ -8,3 +8,10 @@
       %li
         %a{:href => "/database/" + File.join(collection.db.name, collection.name), :class => (collection.name.include? "system.")?"meta":""}
           = collection.name
+
+%form{:method => "post", :action => "/add/database"}
+  %fieldset{:style => "border:1px solid;"}
+    %legend
+      New database:
+    %input{:name => "dbname"}
+    %input{:type => "submit", :value => "create"}

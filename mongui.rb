@@ -21,7 +21,8 @@ get "/database/:database" do
 end
 
 get "/drop/database/:database" do
-  "Due to a bug in the Mongo driver, this is not possible currently"
+  Mongo::Connection.new.drop_database params[:database]
+  redirect "/"
 end
 
 post "/add/collection/:database" do
@@ -57,6 +58,10 @@ post "/edit/document/:database/:collection/:id" do
   end
 
   redirect "/database/#{params[:database]}/#{params[:collection]}"
+end
+
+post "/add/database" do
+  redirect "/database/#{params[:dbname]}"
 end
 
 post "/add/document/:database/:collection" do
