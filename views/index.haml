@@ -6,5 +6,5 @@
   %ul
     - db.db.collections.each do |collection|
       %li
-        %a{:href => "/database/" + File.join(collection.db.name, collection.name)}
+        %a{:href => "/database/" + File.join(collection.db.name, collection.name), :class => (collection.name.include? "system.")?"meta":""}
           = collection.name

@@ -230,7 +230,7 @@ th {
   font-weight: bold;
 }
 
-th.meta {
+th.meta, a.meta {
     color:#999;
     font-style:italic;
 }
