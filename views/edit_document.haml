@@ -1,0 +1,13 @@
+%a{:href => "/database/" + File.join(@db.name, @collection.name)}
+  Back to #{@collection.name}
+
+%h2
+  Editing document
+  = @doc["_id"]
+
+%form{:method => "post", :action => "/edit/document/" + File.join(@db.name, @collection.name, @doc["_id"].to_s)}
+  - @doc.each_key do |key|
+    - unless key == "_id"
+      %label{:for => "document[#{key}]"} #{key}
+      %input{:type => "text", :name => "document[#{key}]", :value => @doc[key]}
+  %input{:type => "submit", :value => "Submit"}

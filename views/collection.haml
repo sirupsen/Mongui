@@ -22,6 +22,8 @@
           = key
       %th.meta
         delete
+      %th.meta
+        edit
 
   - @collection.find.each do |row|
     %tr
@@ -30,3 +32,5 @@
           = row[key]
       %td.meta
         %a{:href => "/remove/document/" + File.join(@db.name, @collection.name, row["_id"].to_s)} X
+      %td.meta
+        %a{:href => "/edit/document/" + File.join(@db.name, @collection.name, row["_id"].to_s)} &rarr;
