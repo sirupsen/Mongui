@@ -238,3 +238,7 @@ th.meta {
 td.meta {
     text-align:center;
 }
+
+.collection tr:nth-child(even) {
+    background-color:#EEEEFF;
+}

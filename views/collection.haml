@@ -13,7 +13,7 @@
   %li
     %a{:href => "/add/document/" + File.join(@db.name, @collection.name)} Add document
 
-%table
+%table.collection
   %tr
     - @refrow = @collection.find_one
     - if @refrow
