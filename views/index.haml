@@ -1,7 +1,9 @@
 - @databases.each do |db|
   %h2
     %a{:href => "/database/" + db.name}
-      = db.name
+      = db.name   
+    %a.delete{:href => "/drop/database/" + db.name}
+      %img{:src=>"/delete.png"}
 
   %ul
     - db.db.collections.each do |collection|

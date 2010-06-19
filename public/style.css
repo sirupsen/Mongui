@@ -242,3 +242,16 @@ td.meta {
 .collection tr:nth-child(even) {
     background-color:#EEEEFF;
 }
+
+h2 a.delete {
+    display:none;
+}
+
+h2:hover a.delete {
+    display:inline;
+}
+
+h2 a img {
+    outline:none;
+    border:none;
+}
