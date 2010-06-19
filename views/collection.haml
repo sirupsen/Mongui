@@ -3,7 +3,7 @@
     #{@db.name}
   = @collection.name
   = "(" + @collection.count.to_s
-  - if @collection.count != 0
+  - unless @collection.count == 0
     ="documents)"
   - else
     ="document)"
