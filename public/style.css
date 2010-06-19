@@ -229,3 +229,12 @@ th {
   padding: 7px;
   font-weight: bold;
 }
+
+th.meta {
+    color:#999;
+    font-style:italic;
+}
+
+td.meta {
+    text-align:center;
+}

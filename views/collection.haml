@@ -20,7 +20,7 @@
       - @refrow.each_key do |key|
         %th
           = key
-      %th
+      %th.meta
         delete
 
   - @collection.find.each do |row|
@@ -28,5 +28,5 @@
       - @refrow.each_key do |key|
         %td
           = row[key]
-      %td
+      %td.meta
         %a{:href => "/remove/document/" + File.join(@db.name, @collection.name, row["_id"].to_s)} X
