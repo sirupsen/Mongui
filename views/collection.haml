@@ -1,6 +1,7 @@
 %h2 
   %a{:href => "/database/" + @db.name} 
-    #{@db.name}
+  = @db.name
+
   = @collection.name
   = "(" + @collection.count.to_s
   - if @collection.count == 1
