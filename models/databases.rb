@@ -25,4 +25,8 @@ class Database
     db.db = Mongo::Connection.new.db(query)
     db
   end
+
+  def self.drop(name)
+    Mongo::Connection.new.drop_database name
+  end
 end

@@ -21,7 +21,7 @@ get "/database/:database" do
 end
 
 get "/drop/database/:database" do
-  Mongo::Connection.new.drop_database params[:database]
+  Database.drop params[:database]
   redirect "/"
 end
 
